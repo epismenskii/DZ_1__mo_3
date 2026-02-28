@@ -1,6 +1,6 @@
-var textColor = prompt("Введите цвет для фона страницы, например red, green, pink и т.п.:");
+let textColor = prompt("Введите цвет для фона страницы, например red, green, pink и т.п.:");
 
-var textBlock = document.querySelector("#text");
+let textBlock = document.querySelector("#text");
 
 if (textColor) {
     textBlock.style.backgroundColor = textColor;
@@ -16,13 +16,15 @@ if (textColor) {
     }
 }
 
-var light = prompt("Введите свет светофора (red/yellow/green):")
+let light = prompt("Введите свет светофора (red/yellow/green):")
 
 
-if (light == null || light == "") {
+if (light == null || light.trim() == "") {
     alert ("Вы ничего не ввели!")
 }
 else {
+    light = light.trim().toLowerCase();
+
     if (light == "red" || light == "красный") {
         document.querySelector(".red").style.backgroundColor = "red"
         document.querySelector(".title__red").style.visibility = "visible"
@@ -36,6 +38,6 @@ else {
         document.querySelector(".title__green").style.visibility = "visible"
     }
     else {
-        alert ("Введите цвет для светофора (red/yellow/green) или (красный/желтый/зеленый)!")
+        alert ("Введите цвет для светофора (red/yellow/green) или (Красный/Желтый/Зеленый)!")
     }
 }
